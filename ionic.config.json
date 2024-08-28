@@ -1,0 +1,7 @@
+{
+  "name": "SkincareApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
