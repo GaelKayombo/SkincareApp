@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'; // Import Component correctly
 
-// Interface to define the structure of a Product
 interface Product {
   name: string;
   type: string;
-  expirationDate: Date;
+  expiryDate: string;
 }
 
 @Component({
@@ -13,24 +12,23 @@ interface Product {
   styleUrls: ['./product-list.page.scss'],
 })
 export class ProductListPage {
-  // Array to hold products
-  products: Product[] = [];
+  // Predefined example skincare products
+  products: Product[] = [
+    { name: 'Hydrating Cleanser', type: 'Cleanser', expiryDate: '2024-10-01' },
+    { name: 'Vitamin C Serum', type: 'Serum', expiryDate: '2024-12-15' },
+    { name: 'Moisturizing Cream', type: 'Moisturizer', expiryDate: '2024-11-20' },
+    { name: 'Sunscreen SPF 50', type: 'Sunscreen', expiryDate: '2024-09-10' },
+    { name: 'Exfoliating Scrub', type: 'Exfoliant', expiryDate: '2025-01-05' }
+  ];
 
-  // Object to hold a new product being added
-  newProduct: Product = { name: '', type: '', expirationDate: new Date() };
+  newProduct: Product = { name: '', type: '', expiryDate: '' };
 
-  constructor() {}
-
-  // Method to add a new product to the list
   addProduct() {
-    if (this.newProduct.name && this.newProduct.type) {
-      this.products.push({ ...this.newProduct }); // Add the new product to the list
-      this.newProduct = { name: '', type: '', expirationDate: new Date() }; // Reset the new product object
-    }
+    this.products.push({ ...this.newProduct });
+    this.newProduct = { name: '', type: '', expiryDate: '' };
   }
 
-  // Method to remove a product from the list
   removeProduct(product: Product) {
-    this.products = this.products.filter((p) => p !== product); // Filter out the product to be removed
+    this.products = this.products.filter(p => p !== product);
   }
 }

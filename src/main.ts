@@ -1,18 +1,14 @@
-import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { enableProdMode } from '@angular/core';
 import { environment } from './environments/environment';
-import { bootstrapApplication } from '@angular/platform-browser';
-import { AppComponent } from './app/app.component';
-import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
-import { routes } from './app/app-routing.module';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
 
+// Enable production mode if the environment is set to production
 if (environment.production) {
   enableProdMode();
 }
 
-bootstrapApplication(AppComponent, {
-  providers: [
-    importProvidersFrom(IonicModule.forRoot({})),
-    importProvidersFrom(RouterModule.forRoot(routes)),
-  ]
-}).catch(err => console.error(err));
+// Bootstrap the application with the AppModule
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .catch(err => console.error(err));

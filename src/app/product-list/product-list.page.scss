@@ -1,9 +1,18 @@
 ion-header {
-    --background: #ffcccb; /* Baby Pink */
+  background-color: #aed6f1; /* Baby blue color */
+}
+
+ion-title {
+  color: #fff; /* White color */
+}
+
+ion-content {
+  ion-item {
+    --background: #f5f5f5;
+    margin-bottom: 10px;
   }
-  
-  ion-content {
-    --background: #add8e6; /* Light Blue */
-    padding: 16px;
+
+  ion-button {
+    margin-top: 20px;
   }
-  
+}

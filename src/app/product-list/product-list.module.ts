@@ -1,18 +1,19 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { FormsModule } from '@angular/forms'; // Import FormsModule for ngModel support
+import { IonicModule } from '@ionic/angular'; // Import IonicModule to use Ionic components
 
-import { ProductListPageRoutingModule } from './product-list-routing.module';
-import { ProductListPage } from './product-list.page';
+import { ProductListPageRoutingModule } from './product-list-routing.module'; // Routing module for this page
+import { ProductListPage } from './product-list.page'; // Importing our ProductListPage component
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
-    IonicModule,
+    FormsModule, // Necessary for using ngModel
+    IonicModule, // Import IonicModule for all Ionic components
     ProductListPageRoutingModule
   ],
-  declarations: [ProductListPage]
+  declarations: [ProductListPage], // Declaring our ProductListPage
+  schemas: [CUSTOM_ELEMENTS_SCHEMA] // Angular needs to know we're using custom elements from Ionic
 })
-export class ProductListPageModule { }
+export class ProductListPageModule {}

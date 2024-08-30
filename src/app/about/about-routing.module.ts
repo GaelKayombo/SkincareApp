@@ -5,11 +5,11 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule) // Correct path to home module
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: 'product-list',
-    loadChildren: () => import('./product-list/product-list.module').then(m => m.ProductListPageModule) // Correct path to product-list module
+    loadChildren: () => import('./product-list/product-list.module').then(m => m.ProductListPageModule)
   },
   {
     path: 'about',

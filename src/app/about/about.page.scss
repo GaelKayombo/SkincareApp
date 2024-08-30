@@ -1,0 +1,31 @@
+ion-header {
+    background-color: #f8b6c1; /* Soft pink for the header */
+  }
+  
+  ion-title {
+    color: #fff; /* White color for the title */
+  }
+  
+  ion-content {
+    background-color: #aed6f1; /* Baby blue background */
+    color: #333; /* Dark text color */
+    padding: 20px;
+  
+    h2 {
+      color: #f8b6c1; /* Soft pink for the heading */
+      text-align: center;
+    }
+  
+    p {
+      font-size: 1.1em;
+    }
+  
+    ul {
+      padding-left: 20px;
+    }
+  
+    li {
+      margin-bottom: 10px;
+    }
+  }
+  
